@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">math_game_test_app</string>
+    <string name="tv_title_top">Состав числа</string>
+    <string name="tv_tile_bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac suscipit neque, non ultrices lacus. Ut a nulla sit amet enim malesuada tincidunt quis non sem. Vivamus hendrerit semper risus, eget mattis tortor egestas id. In luctus sed dolor non porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam varius mollis condimentum. Etiam aliquet tincidunt ante, euismod sodales lacus facilisis vel. Cras vel tristique massa. Phasellus lobortis metus non lorem imperdiet interdum. Aenean dignissim est in ornare fringilla. Maecenas vulputate elit arcu, vel auctor metus sagittis at. Praesent nec lectus aliquet, interdum libero eget, interdum lorem.
+        </string>
+    <string name="button_text">Understand</string>
+    <string name="test">Тестовый</string>
+    <string name="easy">Легкий</string>
+    <string name="normal">Нормальный</string>
+    <string name="hard">Сложный</string>
+    <string name="choose_level">Выберите уровень</string>
+    <string name="question_mark">\?</string>
+    <string name="progress_answer">Правильных ответов %s (минимум %s)</string>
+    <string name="needed_true_answers">Необходимое кол-во правильных ответов: %s</string>
+    <string name="your_score">Ваш счёт: %s</string>
+    <string name="needed_percent_true_answers">Необходимый процент правильных ответов: %s</string>
+    <string name="percent_true_answers">Процент правильных ответов: %s</string>
+    <string name="try_again">Попробовать снова</string>
+
 </resources>
