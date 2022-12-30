@@ -15,13 +15,14 @@ import com.brostopchat.math_game_test_app.domain.entity.Question
 import com.brostopchat.math_game_test_app.domain.usecases.GenerateQuestionUseCase
 import com.brostopchat.math_game_test_app.domain.usecases.GetGameSettingsUseCase
 
-class GameViewModel(application: Application): AndroidViewModel(application) {
+class GameViewModel(
+    private val application: Application,
+    private val level: Level
+    ): ViewModel() {
 
-    private lateinit var level: Level
     private lateinit var gameSettings: GameSettings
 
     private val repository = GameRepositoryImpl
-    private val context = application
 
     private val getGameSettingsUseCase = GetGameSettingsUseCase(repository)
     private val generateQuestionUseCase = GenerateQuestionUseCase(repository)
@@ -63,8 +64,12 @@ class GameViewModel(application: Application): AndroidViewModel(application) {
     private var countOfRightAnswers = 0
     private var countOfQuestion = 0
 
-    fun startGame(level: Level) {
-        getGameSettings(level)
+    init {
+        startGame()
+    }
+
+    fun startGame() {
+        getGameSettings()
         startTimer()
         updateProgress()
         generateQuestion()
@@ -81,7 +86,7 @@ class GameViewModel(application: Application): AndroidViewModel(application) {
         _percentOfRightAnswers.postValue(percent)
         _progressAnswers.postValue(
             String.format(
-                context.resources.getString(R.string.percent_true_answers),
+                application.resources.getString(R.string.percent_true_answers),
                 countOfRightAnswers,
                 gameSettings.minCountOfRightAnswers
             )
@@ -105,8 +110,7 @@ class GameViewModel(application: Application): AndroidViewModel(application) {
         countOfQuestion++
     }
 
-    private fun getGameSettings(level: Level) {
-        this.level = level
+    private fun getGameSettings() {
         this.gameSettings = getGameSettingsUseCase(level)
         _minPercent.postValue(gameSettings.minPercentOfRightAnswers)
     }
