@@ -40,32 +40,6 @@ class GameFinishedFragment: Fragment() {
 
     private fun bindViews() {
         binding.gameResult = args.gameResult
-        with(binding) {
-//            tvText1.text = String.format(
-//                getString(R.string.needed_true_answers),
-//                args.gameResult.gameSettings.minCountOfRightAnswers
-//            )
-//            tvText2.text = String.format(
-//                getString(R.string.your_score),
-//                args.gameResult.countOfRightAnswers
-//            )
-//            tvText3.text = String.format(
-//                getString(R.string.needed_percent_true_answers),
-//                args.gameResult.gameSettings.minPercentOfRightAnswers
-//            )
-            tvText4.text = String.format(
-                getString(R.string.percent_true_answers),
-                getPercentOfRightAnswers()
-            )
-        }
-    }
-
-    private fun getPercentOfRightAnswers() = with(args.gameResult) {
-        if (countOfQuestions == 0) {
-             0
-        } else {
-            ((countOfRightAnswers / countOfQuestions.toDouble()) * 100).toInt()
-        }
     }
 
     private fun setupOnClickListener() {

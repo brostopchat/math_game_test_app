@@ -21,18 +21,21 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="236dp"
-            android:text="@{gameResult.gameSettings.minCountOfRightAnswersString}"
+            app:requiredAnswers="@{gameResult.gameSettings.minPercentOfRightAnswers}"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/needed_true_answers"
+            />
 
         <TextView
             android:id="@+id/tv_text_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@{gameResult.countOfRightAnswersString}"
+            app:countAnswers="@{gameResult.countOfRightAnswers}"
             app:layout_constraintTop_toBottomOf="@+id/tv_text_1"
             app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="@string/your_score"
             />
 
         <TextView
@@ -40,9 +43,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@{gameResult.gameSettings.minPercentOfRightAnswersString}"
+            app:requiredPercent="@{gameResult.gameSettings.minPercentOfRightAnswers}"
             app:layout_constraintTop_toBottomOf="@+id/tv_text_2"
             app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="@string/needed_percent_true_answers"
             />
 
         <TextView
@@ -50,9 +54,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@string/percent_true_answers"
+            app:scorePercentage="@{gameResult}"
             app:layout_constraintTop_toBottomOf="@+id/tv_text_3"
             app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="@string/percent_true_answers"
             />
 
         <Button
