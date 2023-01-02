@@ -35,10 +35,6 @@ class GameFinishedFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupOnClickListener()
-        bindViews()
-    }
-
-    private fun bindViews() {
         binding.gameResult = args.gameResult
     }
 
